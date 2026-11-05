@@ -12,3 +12,18 @@ class ListMovie(generics.ListAPIView):
 class DetailMovie(generics.RetrieveAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+
+
+class CreateMovie(generics.CreateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+
+class UpdateMovie(generics.UpdateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+
+class DeleteMovie(generics.DestroyAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
