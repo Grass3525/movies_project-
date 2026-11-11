@@ -1,19 +1,9 @@
-
-from django.urls import path
-from .views import (
-    ListMovie,
-    DetailMovie,
-    CreateMovie,
-    UpdateMovie,
-    DeleteMovie,
-)
+from rest_framework.routers import SimpleRouter
+from .views import MovieViewSet
 
 app_name = 'movies'
 
-urlpatterns = [
-    path('', ListMovie.as_view(), name='movie-list'),
-    path('create/', CreateMovie.as_view(), name='movie-create'),
-    path('<int:pk>/', DetailMovie.as_view(), name='movie-detail'),
-    path('<int:pk>/update/', UpdateMovie.as_view(), name='movie-update'),
-    path('<int:pk>/delete/', DeleteMovie.as_view(), name='movie-delete'),
-]
+router = SimpleRouter()
+router.register('movies', MovieViewSet, basename='movies')
+
+urlpatterns = router.urls
