@@ -23,5 +23,5 @@ urlpatterns = [
     path('api/v1/', include('movies.urls')),
     path('api/v1/auth/', include('rest_framework.urls')),
     path('api/v1/auth/token/', obtain_auth_token),
-
+    path('api/v1/dj-rest-auth/', include('dj_rest_auth.urls')),
 ]
