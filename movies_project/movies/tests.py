@@ -2,7 +2,7 @@ import unittest
 import requests
 from config import base
 
-AUTH = ("grass", "Corso_2026")  # utente creato con createsuperuser
+AUTH = ("grass", "Corso_2026")
 
 
 class NewVisitorTest(unittest.TestCase):

@@ -28,8 +28,6 @@ class IsAdminOrManagerOrReadOnly(permissions.BasePermission):
         return self._is_admin_or_manager(request.user)
 
     def has_object_permission(self, request, view, obj):
-        # Lettura consentita
         if request.method in permissions.SAFE_METHODS:
             return True
-        # Scrittura consentita solo ad admin/staff o Gestori
         return self._is_admin_or_manager(request.user)

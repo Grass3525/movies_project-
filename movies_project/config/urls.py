@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.http import JsonResponse
+from rest_framework.authtoken.views import obtain_auth_token
+
 
 
 def home(request):
@@ -19,5 +21,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/v1/', include('movies.urls')),
-    path('api/v1/auth/', include('rest_framework.urls')),  # new
+    path('api/v1/auth/', include('rest_framework.urls')),
+    path('api/v1/auth/token/', obtain_auth_token),
+
 ]
